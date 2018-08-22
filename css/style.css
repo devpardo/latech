@@ -1,0 +1,233 @@
+body {
+  background-color: #e3e3e3;
+  background-image: url("../assets/chips.jpg");
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.odd-even {
+  position: relative;
+  width: 800px;
+  height: 700px;
+  background: #ebbb3b;
+  margin: 0 auto;
+  padding: 10px;
+  -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+}
+
+.video-js {
+  margin: 0 auto;
+  width: 100%;
+  height: 500px;
+}
+
+.results {
+  background: #350703;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  color: #f0c332;
+  padding: 10px 20px;
+  width: 200px;
+}
+
+.results > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.results > ul > li {
+  padding: 5px 3px;
+}
+
+.results > ul > li > span{
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+}
+
+.results > ul > li > span:first-child {
+  border-right: 1px solid #984139;
+}
+
+.results > ul > li > span > i.icon{
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  margin-left: 10px;
+  font-style: normal;
+}
+
+.results > ul > li > span > i.icon.hearts:after {
+  content: "♥";
+}
+
+.results > ul > li > span > i.icon.diamonds:after {
+  content: "♦";
+}
+
+.results > ul > li > span > i.icon.spades:after {
+  content: "♠";
+}
+
+.results > ul > li > span > i.icon.clubs:after {
+  content: "♣";
+}
+
+
+.results > ul > li:nth-child(odd) {
+  background: #7d241d;
+  color: #f7d879;
+}
+
+.results > ul > li:nth-child(even) {
+  background:#691710;
+  color: #caa01f;
+}
+
+.results > h1 {
+  font-size: 1.3em;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+@keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+}
+
+.cards {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+  width: 800px;
+}
+
+.card {
+  position: relative;
+  display: inline-block;
+  width: 125px;
+  height: 180px;
+  font: 16px 'Trebuchet MS';
+  margin: 10px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  vertical-align: top;
+}
+
+.card>.card-number {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card.diamonds, .card.hearts {
+  color: #d02929;
+}
+
+.card.clubs, .card.spades {
+  color: #000;
+}
+
+.card.diamonds>h1::after {
+  content: "♦";
+  margin-left: 10px;
+}
+
+.card.hearts>h1::after {
+  content: "♥";
+  margin-left: 10px;
+}
+
+.card.spades>h1::after {
+  content: "♠";
+  margin-left: 10px;
+}
+
+.card.clubs>h1::after {
+  content: "♣";
+  margin-left: 10px;
+}
+
+object {
+  background: #ffffff;
+  height: 1024px;
+  width: 675px;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://vjs.zencdn.net/7.1.0/video-js.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="odd-even">
+      <video id="player" class="video-js" controls preload="auto" width="1024" height="675"
+      poster="" data-setup="{}">
+        <source src="http://vdn.h0914.cn:8096/live/royal1037.m3u8" type='application/x-mpegURL'>
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+      </video>
+    
+      <div class="cards">
+        <div class="card animated" id="card1">
+          <h1 class="card-number"></h1>
+        </div>
+        <div class="card animated" id="card2">
+          <h1 class="card-number"></h1>
+        </div>
+      </div>
+  </div>
+
+  <div class="results">
+    <h1>결과</h1>
+    <ul id="res">
+    </ul>
+  </div>
+    
+  
+  <script src="https://vjs.zencdn.net/7.1.0/video.js"></script>
+ 
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+  <script src="js/moment.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/results.js"></script>
+  
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+      
+      //get results from API
+      loadResults();
+
+      var counter = x;
+      var now = moment().unix();
+
+
+      var interval = setInterval(function() {
+
+          counter--;
+          //loadResults();
+          console.log(card_one);
+          // console.log(card_two);
+          //loadResults();
+
+          // if (!card_one == 0) {
+          //   $("#card1").show();
+          //   $("#card1").addClass("flipInX");
+          //   $("#card1 > h1.card-number").html(card_one);
+          //   $("#card1").addClass(color_one);
+          // }
+
+          // if(!card_two == 0 && $("#card2").css("display","none")) {
+          //   $("#card2").show();
+          //   $("#card2").addClass("flipInX");
+          //   $("#card2 > h1.card-number").html(card_two);
+          //   $("#card2").addClass(color_two);
+          // }
+
+
+      }, 1000);
+      
+
+    });
+    
+
+  
+  </script>
+</body>
+</html>
